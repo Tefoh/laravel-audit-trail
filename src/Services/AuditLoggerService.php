@@ -33,7 +33,7 @@ class AuditLoggerService implements AuditLoggerInterface
         /** @var Model $modelInstance */
         $modelInstance = Config::get('audit-trail.audit_model');
 
-        $modelInstance::query()->insert([
+        $modelInstance::query()->create([
             'table_name' => $tableName,
             'operation_type' => $operationType,
             'query' => $query,
