@@ -20,6 +20,8 @@ class AuditLog extends Model
         'created_at',
     ];
 
+    public $timestamps = false;
+
     public function getConnectionName(): string|null
     {
         return Config::get('audit-trail.database.connection', Config::get('database.default'));
